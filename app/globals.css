@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins&display=swap');
+
+
 :root {
 }
 * {
@@ -6,6 +9,8 @@
   margin: 0;
 
   --font-montserrat: 'Montserrat', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+
 }
 
 html,
@@ -16,6 +21,5 @@ body {
 }
 
 body {
-  background-color: #F7F8FA;
-}
+  background: linear-gradient(107deg, #191C1F 0.93%, #0B0F12 100%);}
 

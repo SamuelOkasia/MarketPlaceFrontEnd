@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         // Replace with your API endpoint
-        fetch('https://market-place-backend-45918c9a8b0b.herokuapp.com/api/get_products')
+        fetch('http://127.0.0.1:5000/api/get_products')
             .then(response => response.json())
             .then(data => {
                 setProducts(data);
@@ -30,7 +30,9 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
-            <Deletebutton/>
+{/*
+            <Deletebutton />
+*/}
             <h2>Product Dashboard</h2>
 {/*
             <div className="dashboard__container">
@@ -61,14 +63,6 @@ const Dashboard = () => {
                     return new Date(b.added_on) - new Date(a.added_on);
                 }).map(product => (
                     <div className="dashboard__container__card">
-                        <Link href={product.link} className="dashboard__container__card--link">
-                            <div className="dashboard__container__card__image">
-                                <img className="dashboard__container__card__image--image"
-                                     src={product.image}
-                                     alt="Car Image"
-                                />
-                            </div>
-                        </Link>
                         <div className="dashboard__container__card__details">
                             <h3 className="dashboard__container__card__details--name">
                                 {product.name}
@@ -95,11 +89,18 @@ const Dashboard = () => {
 
 
                             <div className="dashboard__container__card__details__description">
-                                <h3>Description:</h3>
                                 <p className="dashboard__container__card__details--description">
                                     {product.description}
                                 </p>
                             </div>
+                            <Link href={product.link} className="dashboard__container__card--link">
+                                <div className="dashboard__container__card__image">
+                                    <img className="dashboard__container__card__image--image"
+                                         src={product.image}
+                                         alt="Car Image"
+                                    />
+                                </div>
+                            </Link>
                         </div>
                         <div className="line-break"/>
                     </div>
