@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         // Replace with your API endpoint
-        fetch('http://127.0.0.1:5000/api/get_products')
+        fetch('https://samuelokasia1.pythonanywhere.com/api/get_products')
             .then(response => response.json())
             .then(data => {
                 setProducts(data);
